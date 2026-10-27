@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node
+node_modules/
+
+# Secrets and keys must never be committed
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+*.kdbx
+credentials*.json
+secrets*.json
+
+# Tool output and editor files
+lychee/
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

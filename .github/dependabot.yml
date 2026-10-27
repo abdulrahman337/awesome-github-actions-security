@@ -1,0 +1,16 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # Wait two weeks before proposing a brand new release, so a compromised release is more likely
+    # to be found and pulled before it reaches this repository.
+    cooldown:
+      default-days: 14
+    commit-message:
+      prefix: "ci"
+    groups:
+      actions:
+        patterns:
+          - "*"

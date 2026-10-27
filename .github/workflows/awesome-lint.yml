@@ -1,0 +1,37 @@
+name: Awesome lint
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  lint:
+    name: Run awesome-lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # Non-blocking: awesome-lint also checks repository settings, which can
+    # differ between forks and the main repository.
+    continue-on-error: true
+    permissions:
+      contents: read
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "24"
+      - name: Run awesome-lint
+        env:
+          # Install scripts of dependencies are not needed to lint Markdown, so do not run them.
+          NPM_CONFIG_IGNORE_SCRIPTS: "true"
+        run: npx --yes awesome-lint@2.3.0

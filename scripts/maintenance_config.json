@@ -1,0 +1,12 @@
+{
+  "key_tools": [
+    "zizmorcore/zizmor",
+    "boostsecurityio/poutine",
+    "rhysd/actionlint",
+    "ossf/scorecard",
+    "suzuki-shunsuke/pinact",
+    "step-security/harden-runner",
+    "nektos/act"
+  ],
+  "notes": ""
+}
