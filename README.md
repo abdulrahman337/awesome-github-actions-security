@@ -50,6 +50,7 @@ Beyond links, this repository ships practical guides:
 - [Dependabot Core](https://github.com/dependabot/dependabot-core) - Engine behind Dependabot, which can update pinned actions when set up for the github-actions ecosystem.
 - [Renovate](https://github.com/renovatebot/renovate) - Automated dependency updater that supports GitHub Actions and digest pinning.
 - [Dependency Review Action](https://github.com/actions/dependency-review-action) - Fails pull requests that introduce vulnerable dependencies.
+- [npm-install-audit](https://github.com/cryptostrapon/npm-install-audit) - Action and CLI that fail a job when a checked-out JavaScript project has install hooks, active git hooks or registry overrides, before any install step runs.
 
 ## Runtime Hardening and Monitoring
 
